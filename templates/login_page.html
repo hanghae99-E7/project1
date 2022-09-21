@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--language setting-->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!--auto, adjustment of mobile screen-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 - 9-12 토이프로젝트</title>
+
+    <script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&display=swap" rel="stylesheet">
+    <meta property="og:title" content="SPARTAGRAM">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg">
+    <meta property="og:description" content="간단한 사진과 당신의 기분을 공유합니다.">
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        body {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height: 100vh;
+            background: url("https://www.whatsappimages.in/wp-content/uploads/2021/07/Black-Background-Images-Pics-Download.jpg") no-repeat center;
+            background-size: cover;
+            background-position: center 30%;
+
+        }
+
+        body::before{
+            content:"";
+            position: absolute;
+            z-index:1;
+            top: 0; right:0; bottom:0; left:0;
+        }
+
+        /*z index: absolute로 인해 겹쳤을 때 숫자가 큰게 앞에 먼저 보이게 함*/
+        .login-form{
+            position: relative;
+            z-index: 2;
+        }
+
+        .login-form h1{
+            font-size: 32px;
+            color : #fff;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .int-area{
+            width: 300px;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .int-area input{
+            width: 95%;
+            max-width: 375px;
+            padding: 20px 10px 10px;
+            background-color: transparent;
+            border:none;
+            border-bottom: 1px solid #999;
+            font-size: 18px;
+            color: white;
+            outline: none;
+        }
+
+        .int-area label{
+            position: absolute;
+            left:10px;
+            top: 15px;
+            font-size: 18px;
+            color: #999;
+            transition: top .5s ease;
+        }
+
+        .int-area input:focus + label,
+        .int-area input:valid + label{
+            top:0;
+            font-size: 13px;
+        }
+
+        .btn-area{
+            margin-top: 30px;
+        }
+
+        .btn-area button{
+            width: 95%;
+            max-width: 375px;
+            height: 50px;
+            background: #166cea;
+            color: #fff; font-size: 20px;
+            border: none;
+        }
+
+        .caption{
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .caption a{
+            font-size: 15px; color: #999;
+            text-decoration: none;
+        }
+        .caption .forgot_pw{
+            margin-right: 50px;
+        }
+
+
+
+
+
+    </style>
+
+</head>
+
+<body>
+<section class="login-form">
+    <h1>spartagram</h1>
+
+    <div class="int-area">
+    <!--autocomplete: 자동완성 기능 off, required: 내용이 비어있을 경우 경고메세지-->
+        <input type="text" name="id" id="id" autocomplete="off">
+        <label for="id">
+           USER NAME
+        </label>
+    </div>
+    <div class="int-area">
+    <!--autocomplete: 자동완성 기능 off, required: 내용이 비어있을 경우 경고메세지-->
+        <input type="password" name="pw" id="pw" autocomplete="off">
+        <label for="pw">
+           PASSWORD
+        </label>
+    </div>
+    <div class = "btn-area">
+        <a href="main/"><button>login</button></a>
+    </div>
+
+    <div class="caption">
+        <a class="forgot_pw" href="#">FORGOT Password?</a>
+        <a class="signUp" href="signUp/" style="color: #248ae3">SIGN UP</a>
+    </div>
+
+
+
+<script src="in.js"></script>
+</body>
+</html>
